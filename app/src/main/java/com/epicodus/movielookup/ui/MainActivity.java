@@ -14,6 +14,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    public static final String TAG = MainActivity.class.getSimpleName();
     @Bind(R.id.movieSearchButton)
     Button mMovieSearchButton;
     @Bind(R.id.movieSearchEditText)
