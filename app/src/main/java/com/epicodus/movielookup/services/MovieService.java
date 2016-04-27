@@ -3,14 +3,21 @@ package com.epicodus.movielookup.services;
 import android.util.Log;
 
 import com.epicodus.movielookup.Constants;
+import com.epicodus.movielookup.models.Movie;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 import okhttp3.Call;
 import okhttp3.HttpUrl;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.Response;
 
 public class MovieService {
     public static void findMovies(String searchInfo, Callback callback) {
@@ -49,9 +56,17 @@ public class MovieService {
                     String releaseDate = movieJSON.getString("release_date");
                     String language = movieJSON.getString("original_language");
                     String imageUrl = movieJSON.getString("poster_path");
+
+                    Movie movie = new Movie(title, overview, releaseDate, language, imageUrl);
+                    movies.add(movie);
                 }
             }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
+        return movies;
     }
 
 }
