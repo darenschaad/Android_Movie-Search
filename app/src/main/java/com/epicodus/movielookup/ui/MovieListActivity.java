@@ -1,13 +1,16 @@
-package com.epicodus.movielookup;
+package com.epicodus.movielookup.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.epicodus.movielookup.R;
+
+public class MovieListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_movie_list);
+
     }
 }
