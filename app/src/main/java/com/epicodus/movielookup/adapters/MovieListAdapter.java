@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.epicodus.movielookup.R;
 import com.epicodus.movielookup.models.Movie;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -57,6 +58,11 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
         }
 
         public void bindMovie(Movie movie) {
+            if (movie.getImageUrl() != "null") {
+                Picasso.with(mContext).load("http://image.tmdb.org/t/p/w342" + movie.getImageUrl()).into(mMovieImageView);
+            } else {
+                Picasso.with(mContext).load("https://cdn.amctheatres.com/Media/Default/Images/noposter.jpg").into(mMovieImageView);
+            }
             mMovieTitleTextView.setText(movie.getTitle());
             mReleaseDateTextView.setText(movie.getReleaseDate());
             if(movie.getLanguage().equalsIgnoreCase("en")) {
