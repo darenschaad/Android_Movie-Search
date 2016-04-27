@@ -9,13 +9,15 @@ public class Movie {
     private String mReleaseDate; //yyyy/mm/dd
     private String mLanguage;
     private String mImageUrl;
+    private double mRating;
 
-    public Movie(String title, String overview, String releaseDate, String language, String imageUrl) {
+    public Movie(String title, String overview, String releaseDate, String language, String imageUrl, double rating) {
         this.mTitle = title;
         this.mOverview = overview;
         this.mReleaseDate = releaseDate;
         this.mLanguage = language;
         this.mImageUrl = imageUrl;
+        this.mRating = rating;
     }
     public String getTitle() {
         return mTitle;
@@ -32,5 +34,5 @@ public class Movie {
     public String getImageUrl() {
         return mImageUrl;
     }
+    public double getRating() { return mRating; }
 }
-//http://image.tmdb.org/t/p/w342/qCrzofMuobtW3kkoIwgUx3zAUNz.jpg

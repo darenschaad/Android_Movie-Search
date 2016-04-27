@@ -6,7 +6,7 @@
 
     <ImageView
         android:layout_width="130dp"
-        android:layout_height="100dp"
+        android:layout_height="120dp"
         android:id="@+id/movieImageView"
         android:src="@drawable/stock"
         android:scaleType="centerCrop"/>
@@ -49,6 +49,16 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
                 android:textColor="@color/accent"/>
+
+            <RatingBar
+                android:layout_width="162dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/ratingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_alignBottom="@+id/languageTextView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:numStars="10" />
         </RelativeLayout>
     </LinearLayout>
 </LinearLayout>

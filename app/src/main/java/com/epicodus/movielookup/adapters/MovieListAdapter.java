@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.epicodus.movielookup.R;
@@ -48,6 +49,8 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
         @Bind(R.id.movieTitleTextView) TextView mMovieTitleTextView;
         @Bind(R.id.releaseDateTextView) TextView mReleaseDateTextView;
         @Bind(R.id.languageTextView) TextView mLanguageTextView;
+        @Bind(R.id.ratingBar)
+        RatingBar mRatingBar;
         private Context mContext;
 
 
@@ -70,6 +73,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
             } else {
                 mLanguageTextView.setText("Not English");
             }
+            mRatingBar.setRating((float) movie.getRating());
 
         }
     }

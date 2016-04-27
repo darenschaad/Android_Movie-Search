@@ -56,8 +56,9 @@ public class MovieService {
                     String releaseDate = movieJSON.getString("release_date");
                     String language = movieJSON.getString("original_language");
                     String imageUrl = movieJSON.getString("poster_path");
+                    double rating = movieJSON.getDouble("vote_average");
 
-                    Movie movie = new Movie(title, overview, releaseDate, language, imageUrl);
+                    Movie movie = new Movie(title, overview, releaseDate, language, imageUrl, rating);
                     movies.add(movie);
                 }
             }
