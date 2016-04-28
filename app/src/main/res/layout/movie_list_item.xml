@@ -51,7 +51,7 @@
                 android:textColor="@color/accent"/>
 
             <RatingBar
-                android:layout_width="162dp"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/ratingBar"
                 style="?android:attr/ratingBarStyleSmall"

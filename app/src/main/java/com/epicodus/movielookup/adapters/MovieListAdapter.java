@@ -70,7 +70,21 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
             mReleaseDateTextView.setText(movie.getReleaseDate());
             if(movie.getLanguage().equalsIgnoreCase("en")) {
                 mLanguageTextView.setText("English");
-            } else {
+            } else if(movie.getLanguage().equalsIgnoreCase("fr")) {
+                mLanguageTextView.setText("French");
+            }else if(movie.getLanguage().equalsIgnoreCase("sp")) {
+                mLanguageTextView.setText("Spanish");
+            }else if(movie.getLanguage().equalsIgnoreCase("zh")) {
+                mLanguageTextView.setText("Chinese");
+            }else if(movie.getLanguage().equalsIgnoreCase("it")) {
+                mLanguageTextView.setText("Italian");
+            }else if(movie.getLanguage().equalsIgnoreCase("de")) {
+                mLanguageTextView.setText("German");
+            }else if(movie.getLanguage().equalsIgnoreCase("ko")) {
+                mLanguageTextView.setText("Korean");
+            }else if(movie.getLanguage().equalsIgnoreCase("ru")) {
+                mLanguageTextView.setText("Russian");
+            }else {
                 mLanguageTextView.setText("Not English");
             }
             mRatingBar.setRating((float) movie.getRating());
