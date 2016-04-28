@@ -1,8 +1,11 @@
 package com.epicodus.movielookup.models;
 
+import org.parceler.Parcel;
+
 /**
  * Created by Guest on 4/27/16.
  */
+@Parcel
 public class Movie {
     private String mTitle;
     private String mOverview;
@@ -10,6 +13,8 @@ public class Movie {
     private String mLanguage;
     private String mImageUrl;
     private double mRating;
+
+    public Movie() {}
 
     public Movie(String title, String overview, String releaseDate, String language, String imageUrl, double rating) {
         this.mTitle = title;
@@ -29,6 +34,25 @@ public class Movie {
         return mReleaseDate;
     }
     public String getLanguage() {
+        if(mLanguage.equalsIgnoreCase("en")) {
+            mLanguage = "English";
+        } else if(mLanguage.equalsIgnoreCase("fr")) {
+            mLanguage = "French";
+        }else if(mLanguage.equalsIgnoreCase("sp")) {
+            mLanguage = "Spanish";
+        }else if(mLanguage.equalsIgnoreCase("zh")) {
+            mLanguage = "Chinese";
+        }else if(mLanguage.equalsIgnoreCase("it")) {
+            mLanguage = "Italian";
+        }else if(mLanguage.equalsIgnoreCase("de")) {
+            mLanguage = "German";
+        }else if(mLanguage.equalsIgnoreCase("ko")) {
+            mLanguage = "Korean";
+        }else if(mLanguage.equalsIgnoreCase("ru")) {
+            mLanguage = "Russian";
+        }else {
+            mLanguage = "Not English";
+        }
         return mLanguage;
     }
     public String getImageUrl() {
