@@ -76,7 +76,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
 
         public void bindMovie(Movie movie) {
             if (movie.getImageUrl() != "null") {
-                Picasso.with(mContext).load("http://image.tmdb.org/t/p/w342" + movie.getImageUrl()).into(mMovieImageView);
+                Picasso.with(mContext).load(movie.getImageUrl()).into(mMovieImageView);
             } else {
                 Picasso.with(mContext).load("https://cdn.amctheatres.com/Media/Default/Images/noposter.jpg").into(mMovieImageView);
             }

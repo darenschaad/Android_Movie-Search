@@ -9,13 +9,10 @@ import com.epicodus.movielookup.ui.MovieDetailFragment;
 
 import java.util.ArrayList;
 
-/**
- * Created by Guest on 4/28/16.
- */
-public class MoviePageAdapter extends FragmentPagerAdapter {
+public class MoviePagerAdapter extends FragmentPagerAdapter {
     private ArrayList<Movie> mMovies;
 
-    public MoviePageAdapter(FragmentManager fm, ArrayList<Movie> movies) {
+    public MoviePagerAdapter(FragmentManager fm, ArrayList<Movie> movies) {
         super(fm);
         mMovies = movies;
     }

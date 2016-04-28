@@ -2,9 +2,6 @@ package com.epicodus.movielookup.models;
 
 import org.parceler.Parcel;
 
-/**
- * Created by Guest on 4/27/16.
- */
 @Parcel
 public class Movie {
     private String mTitle;
@@ -56,6 +53,7 @@ public class Movie {
         return mLanguage;
     }
     public String getImageUrl() {
+        mImageUrl =  "http://image.tmdb.org/t/p/w342" + mImageUrl;
         return mImageUrl;
     }
     public double getRating() { return mRating; }

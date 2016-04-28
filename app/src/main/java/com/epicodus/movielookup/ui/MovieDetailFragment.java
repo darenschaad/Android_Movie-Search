@@ -1,8 +1,14 @@
 package com.epicodus.movielookup.ui;
 
 
+import android.content.Context;
+import android.content.Intent;
+import android.location.Location;
+import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +27,7 @@ import butterknife.ButterKnife;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MovieDetailFragment extends Fragment {
+public class MovieDetailFragment extends Fragment implements View.OnClickListener {
     @Bind(R.id.movieImageView) ImageView mImageLabel;
     @Bind(R.id.movieTitleTextView) TextView mTitleLabel;
     @Bind(R.id.dateTextView) TextView mDateLabel;
@@ -58,13 +64,30 @@ public class MovieDetailFragment extends Fragment {
         ButterKnife.bind(this, view);
 
         Picasso.with(view.getContext()).load(mMovie.getImageUrl()).into(mImageLabel);
+        Log.d("MOVE IMAGE", mMovie.getImageUrl());
         mTitleLabel.setText(mMovie.getTitle());
         mDateLabel.setText(mMovie.getReleaseDate());
         mOverviewLabel.setText(mMovie.getOverview());
         mLanguageLabel.setText(mMovie.getLanguage());
         mRatingLabel.setText(Double.toString(mMovie.getRating()) + "/10");
+        mGoogleLabel.setOnClickListener(this);
+        mTheaterLabel.setOnClickListener(this);
         // Inflate the layout for this fragment
         return view;
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        if (v == mGoogleLabel) {
+            Intent googleIntent = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=" + mMovie.getTitle() + " movie info" ));
+            startActivity(googleIntent);
+        }
+        if (v == mTheaterLabel) {
+            Intent goToTheaterMapIntent = new Intent(getActivity(), DisplayMapActivity.class);
+            startActivity(goToTheaterMapIntent);
+        }
     }
 
 }

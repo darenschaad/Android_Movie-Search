@@ -13,7 +13,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="160dp"
-            android:id="@+id/restaurantImageView"
+            android:id="@+id/movieImageView"
             android:src="@drawable/stock"
             android:scaleType="centerCrop" />
 
@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Movie Name"
-                android:id="@+id/mainTitleTextView"
+                android:id="@+id/movieTitleTextView"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:textSize="20sp"
@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:text="4.5/10"
                 android:id="@+id/ratingTextView"
-                android:layout_alignTop="@+id/mainTitleTextView"
+                android:layout_alignTop="@+id/movieTitleTextView"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:textColor="@color/accent"
@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:text="Release Date"
                 android:id="@+id/dateTextView"
-                android:layout_below="@+id/mainTitleTextView"
+                android:layout_below="@+id/movieTitleTextView"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:textColor="@color/secondary_text"
